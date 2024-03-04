@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width,initial-scale=1" />
+      <title>Test</title>
+          <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+  </head>
+  <body>
+      <h1>MIDI2Scratch</h1>
+      <h2 id="load">LOADING...</h2>
+      <button id="select">Select MIDI</button>
+      <script>
+          document.getElementById("select").addEventListener("click",()=>{
+              document.getElementById("myFile").click();
+          });
+      </script>
+      <input type="file" id="myFile" name="filename" style="display:none" accept=".midi,.mid">
+      <input py-click="submit" type="submit" value="Send">
+      <h3 id="output"></h3>
+    <script type="py" src="./main.py" config="./pyscript.json"></script>
+  </body>
+</html>
